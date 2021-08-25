@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
 
-    if @artile.update(article_params)
+    if @article.update(article_params)
       redirect_to @article
     else
       render :edit
@@ -47,6 +47,6 @@ class ArticlesController < ApplicationController
 
   private 
     def article_params
-      param.require(:article).permit(:title, :body, :status)
+      params.require(:article).permit(:title, :body, :status)
     end
   end
